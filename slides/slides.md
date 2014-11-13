@@ -27,6 +27,9 @@ A lightweight F#/C# library for efficient functional-style pipelines on streams 
 - Open source F# projects
   - {m}brace
   - FsPickler, Vagrant, and of course Streams
+- @NickPalladinos, @krontogiannis, @eiriktsarpalis
+
+https://github.com/nessos
 
 ***
 
@@ -324,6 +327,54 @@ Implements a rich set of operations
 
 ***
 
+### Some Benchmarks
+
+##### i7 8 x 3.7 Ghz (4 physicall), 6 GB RAM
+
+---
+
+#### Sum
+
+![Sum](images/sum.png)
+
+---
+
+#### Sum of Squares
+
+![Sum of Squares](images/sum_of_square.png)
+
+----
+
+#### Sum of Even Squares
+
+![Sum of Even Squares](images/sum_of_square_even.png)
+
+---
+
+#### Cartesian Product
+
+![Cartesian](images/cartesian_product.png)
+
+---
+
+#### Parallel Sum of Squares
+
+![Parallel Sum](images/parallel_sum_of_square.png)
+
+---
+
+#### Parallel Sum of Squares Even
+
+![Parallel Sum](images/parallel_sum_of_square_even.png)
+
+---
+
+#### Parallel Cartesian
+
+![Parallel Cartesian](images/parallel_cartesian_product.png)
+
+***
+
 ### Cloud Streams!
 
 Example: a word count
@@ -332,15 +383,13 @@ Example: a word count
 
 ### Streams are lightweight and powerful
 
-#### In sequential, parallel and distributed flavors.
+#### In sequential, parallel and distributed flavors
 
 ***
 
-### The holy grail is in reach
+### The Holy Grail is in reach
 
-We can write functional pipelines with the performance of imperative code.
-
-*Stream fusion: from lists to streams to nothing at all, Duncan Coutts, Roman Leshchinskiy, and Don Stewart, ICFP '07*
+Write function pipelines with the performance of imperative code.
 
 ***
 
@@ -373,6 +422,22 @@ MLton appears to always be fusing.
 ***
 
 ### Can we make the F# compiler smarter?
+
+***
+
+#### Avaiable on NuGet
+
+https://github.com/nessos/Streams
+
+***
+
+#### Slides and samples
+
+https://github.com/anirothan/StreamsPresentation
+
+***
+
+### Thank you!
 
 ***
 

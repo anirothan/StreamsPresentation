@@ -124,5 +124,6 @@
     <None Include="packages.config" />
     <None Include="mbrace-tutorial.fsx" />
     <None Include="performance.fsx" />
+    <None Include="Tests.fsx" />
   </ItemGroup>
 </Project>

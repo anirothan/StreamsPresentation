@@ -26,7 +26,7 @@ let sumSqEvenStreams() = Stream.ofArray data |> Stream.filter (fun x -> x % 2L =
 //let sumSqEvenLinqOpt = v |> Query.ofSeq |> Query.filter (fun x -> x % 2L = 0L) |> Query.map(fun x -> x * x) |> Query.sum |> Query.compile
 
 let cartSeq () = dataHigh |> Seq.collect (fun x -> Seq.map (fun y -> x * y) dataLow) |> Seq.sum
-let cartArrray () = dataHigh |> Array.collect (fun x -> Array.map (fun y -> x * y) dataLow) |> Array.sum
+let cartArray () = dataHigh |> Array.collect (fun x -> Array.map (fun y -> x * y) dataLow) |> Array.sum
 let cartStreams () = Stream.ofArray dataHigh |> Stream.collect (fun x -> Stream.ofArray dataLow |> Stream.map (fun y -> x * y)) |> Stream.sum
 //let cartLinqOpt = vHi |> Query.ofSeq |> Query.collect (fun x -> Seq.map (fun y -> x * y) vLow) |> Query.sum |> Query.compile
 
@@ -75,6 +75,19 @@ type SeqTests() =
     override __.ParallelCart() = parallelCartSeq() |> ignore
 
 let seqTests = new SeqTests() :> PerfTests
+
+type ArrayTests() =
+    inherit PerfTests("Array")
+
+    override __.Sum() = sumArray() |> ignore
+    override __.SumSq() = sumSqArray() |> ignore
+    override __.SumSqEven() = sumSqEvenArray() |> ignore
+    override __.Cart() = cartArray() |> ignore
+    override __.ParallelSumSq() = ()
+    override __.ParallelSumSqEven() = ()
+    override __.ParallelCart() = ()
+
+let arrayTests = new ArrayTests() :> PerfTests
 
 type StreamsTests() =
     inherit PerfTests("Streams")

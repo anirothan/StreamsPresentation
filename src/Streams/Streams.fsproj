@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B169D89A-7892-475E-8644-E9F79193BC5B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>StreamsPresentation</RootNamespace>
+    <AssemblyName>StreamsPresentation</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <ConsolePause>false</ConsolePause>
+    <Tailcalls>false</Tailcalls>
+    <PlatformTarget>
+    </PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <PlatformTarget>
+    </PlatformTarget>
+    <ConsolePause>false</ConsolePause>
+    <Tailcalls>true</Tailcalls>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="FSharp.Core" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="Streams.Core">
+      <HintPath>..\..\packages\Streams.0.2.5\lib\Streams.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MBrace.Core">
+      <HintPath>..\..\packages\MBrace.Core.0.5.13-alpha\lib\net45\MBrace.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MBrace.Lib">
+      <HintPath>..\..\packages\MBrace.Core.0.5.13-alpha\lib\net45\MBrace.Lib.dll</HintPath>
+    </Reference>
+    <Reference Include="Streams.Cloud">
+      <HintPath>..\..\packages\Streams.Cloud.0.2.1-alpha\lib\Streams.Cloud.dll</HintPath>
+    </Reference>
+    <Reference Include="UnionArgParser">
+      <HintPath>..\..\packages\UnionArgParser.0.8.0\lib\net40\UnionArgParser.dll</HintPath>
+    </Reference>
+    <Reference Include="Unquote">
+      <HintPath>..\..\packages\Unquote.2.2.2\lib\net40\Unquote.dll</HintPath>
+    </Reference>
+    <Reference Include="FsPickler">
+      <HintPath>..\..\packages\FsPickler.1.0.2\lib\net45\FsPickler.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\packages\Newtonsoft.Json.6.0.5\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="FsPickler.Json">
+      <HintPath>..\..\packages\FsPickler.Json.1.0.2\lib\net45\FsPickler.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Thespian">
+      <HintPath>..\..\packages\Thespian.0.0.11-alpha\lib\net45\Thespian.dll</HintPath>
+    </Reference>
+    <Reference Include="Thespian.Cluster">
+      <HintPath>..\..\packages\Thespian.0.0.11-alpha\lib\net45\Thespian.Cluster.dll</HintPath>
+    </Reference>
+    <Reference Include="Vagrant">
+      <HintPath>..\..\packages\Vagrant.0.2.6\lib\net45\Vagrant.dll</HintPath>
+    </Reference>
+    <Reference Include="MBrace.Store">
+      <HintPath>..\..\packages\MBrace.Store.0.5.13-alpha\lib\net45\MBrace.Store.dll</HintPath>
+    </Reference>
+    <Reference Include="MBrace.Utils">
+      <HintPath>..\..\packages\MBrace.Client.0.5.13-alpha\lib\net45\MBrace.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="MBrace.Runtime.Base">
+      <HintPath>..\..\packages\MBrace.Client.0.5.13-alpha\lib\net45\MBrace.Runtime.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="MBrace.Client">
+      <HintPath>..\..\packages\MBrace.Client.0.5.13-alpha\lib\net45\MBrace.Client.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.fs" />
+    <Compile Include="SimpleStreams.fs" />
+    <Compile Include="ExtendedStreams.fs" />
+    <Compile Include="wordcount.fs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.1\Framework\v4.0\Microsoft.FSharp.Targets" />
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties>
+        <Deployment.LinuxDeployData generatePcFile="False" />
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+  <ItemGroup>
+    <None Include="SimpleStreams.fsx" />
+    <None Include="packages.config" />
+    <None Include="mbrace-tutorial.fsx" />
+  </ItemGroup>
+</Project>

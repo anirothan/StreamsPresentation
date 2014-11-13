@@ -191,7 +191,7 @@ ICOOOLPS'14
     |> Seq.map (fun i -> i + 1L) //lazy inter
     |> Seq.sum //eager terminal, forcing evaluation
 
-The terminal is pulling data from the pipeline via IEnumerator.Current() and IEnumerator.Next()
+The terminal is pulling data from the pipeline via IEnumerator.Current and IEnumerator.MoveNext()
 
 ***
 
@@ -238,7 +238,7 @@ The source is pushing data down the pipeline.
 
 ### Stream!
 
-    type Stream = ('T -> unit) -> unit
+    type Stream<'T> = ('T -> unit) -> unit
 
 ---
 

@@ -127,7 +127,7 @@ type Tests =
 let tests = PerfTest<PerfTests>.OfType<Tests>()
 
 let createStreamsImplemenationCompararer() =
-    new ImplementationComparer<_>(streamsTests, [seqTests]) :> PerformanceTester<_>
+    new ImplementationComparer<_>(streamsTests, [seqTests; arrayTests]) :> PerformanceTester<_>
 
 tests |> PerfTest.run (fun () -> createStreamsImplemenationCompararer())
 
